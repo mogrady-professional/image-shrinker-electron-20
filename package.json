@@ -1,0 +1,36 @@
+{
+    "name": "image-shrinker-electron",
+    "version": "1.0.0",
+    "productName": "ImageShrink",
+    "description": "",
+    "main": "main.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "electron .",
+        "dev": "nodemon --exec electron .",
+        "build-package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds",
+        "build-package-win": "electron-packager . --overwrite --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=false --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"ImageShrink\"",
+        "build-package-linux": "electron-packager . --overwrite --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=false --out=release-builds"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mogrady-professional/image-shrinker-electron.git"
+    },
+    "author": "Michael O Grady",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/mogrady-professional/image-shrinker-electron/issues"
+    },
+    "homepage": "https://github.com/mogrady-professional/image-shrinker-electron#readme",
+    "devDependencies": {
+        "electron": "^20.1.0",
+        "nodemon": "^2.0.19"
+    },
+    "dependencies": {
+        "electron-log": "^4.1.2",
+        "electron-packager": "^14.2.1",
+        "imagemin": "^7.0.1",
+        "imagemin-mozjpeg": "^8.0.0",
+        "imagemin-pngquant": "^8.0.0"
+    }
+}
